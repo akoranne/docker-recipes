@@ -108,7 +108,6 @@ It also has following packages ...
 ## Docker image
 
 * [askxtreme/java8-node](https://hub.docker.com/r/askxtreme/java8-node)
-* [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node)
 
 
 #### References / Credit
