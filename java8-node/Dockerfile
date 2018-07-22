@@ -14,4 +14,5 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | bash - \
 RUN npm install -g markdown-pdf newman --unsafe-perm=true --allow-root
 
 # install jfrog-cli
-RUN curl -fL https://getcli.jfrog.io | sh
+RUN curl -fL https://getcli.jfrog.io | sh 
+RUN mv ./jfrog /usr/local/bin/jfrog

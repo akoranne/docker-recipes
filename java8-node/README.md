@@ -35,11 +35,56 @@ It also has following packages ...
 
   $ docker run java8-node:base newman --version
   3.10.0
+
+  $ docker run java8-node:base jfrog --version
+  1.17.1
+
 ```
 
 ```
   # run interactively
-  $ docker run -it java8-node:base /bin/sh
+  $ docker run -it java8-node:base /bin/bash
+  root@57c80c276344:/# jfrog
+    NAME:
+       jfrog - See https://github.com/jfrog/jfrog-cli-go for usage instructions.
+    
+    USAGE:
+       jfrog [global options] command [command options] [arguments...]
+    
+    VERSION:
+       1.17.1
+    
+    COMMANDS:
+       rt		Artifactory commands
+       bt		Bintray commands
+       mc		Mission Control commands
+       xr		Xray commands
+       help, h	Shows a list of commands or help for one command
+    
+    GLOBAL OPTIONS:
+       --help, -h		show help
+       --version, -v	print the version
+    
+    Environment Variables:
+    	JFROG_CLI_LOG_LEVEL
+    		[Default: INFO]
+    		This variable determines the log level of the JFrog CLI.
+    		Possible values are: INFO, ERROR, and DEBUG.
+    		If set to ERROR, JFrog CLI logs error messages only.
+    		It is useful when you wish to read or parse the JFrog CLI output and do not want any other information logged.
+    
+    	JFROG_CLI_OFFER_CONFIG
+    		[Default: true]
+    		If true, JFrog CLI prompts for product server details and saves them in its config file.
+    		To avoid having automation scripts interrupted, set this value to false, and instead,
+    		provide product server details using the config command.
+    
+    	JFROG_CLI_HOME
+    		[Default: ~/.jfrog]
+    		Defines the JFrog CLI home directory path.
+    
+    
+  root@57c80c276344:/#
 ```
 
 ## Upload the image to docker hub
