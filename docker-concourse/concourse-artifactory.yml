@@ -5,7 +5,7 @@ services:
     image: docker.bintray.io/jfrog/artifactory-oss:latest
     container_name: artifactory
     ports:
-     - 8081:8081
+     - 8001:8081
     volumes:
      - ./data/artifactory:/var/opt/jfrog/artifactory
 #    Add extra Java options by uncommenting the following lines
@@ -31,7 +31,7 @@ services:
       - concourse
 
   concourse-web:
-    image: concourse/concourse
+    image: concourse/concourse:3.14.1
     command: web
     links: [concourse-db]
     depends_on: [concourse-db]
@@ -50,7 +50,7 @@ services:
       - concourse
 
   concourse-worker:
-    image: concourse/concourse
+    image: concourse/concourse:3.14.1
     command: worker
     privileged: true
     links: [concourse-web, artifactory]
